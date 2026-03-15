@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useCart } from '../context/CartContext';
-import { ShieldCheck, Zap, RotateCcw, Users, Star } from 'lucide-react';
+import { ShieldCheck, Zap, RotateCcw, Users } from 'lucide-react';
 
 const STYLES = ['Minimal', 'Aesthetic', 'Productivity', 'Business'];
 const COLORS = [
@@ -21,12 +21,6 @@ const ADD_ONS = [
   { name: 'Goal Planning', price: 3 },
   { name: 'Reflection Journal', price: 3 },
   { name: 'Business Dashboard', price: 5 },
-];
-
-const reviews = [
-  { name: "Mia C.", quote: "The customization process is so fun. I use my planner every single day now.", stars: 5, avatar: "/assets/images/avatar-1.jpeg" },
-  { name: "David R.", quote: "Best digital planner I've ever purchased. The layouts are gorgeous.", stars: 5, avatar: "/assets/images/avatar-2.jpeg" },
-  { name: "Aisha N.", quote: "Worth every penny. The habit tracker add-on alone changed my routine.", stars: 5, avatar: "/assets/images/avatar-3.jpeg" },
 ];
 
 export const Customize = () => {
@@ -192,27 +186,6 @@ export const Customize = () => {
           </div>
         </div>
       </div>
-
-      {/* Reviews */}
-      <section className="section-padding border-t border-border">
-        <div className="max-w-5xl mx-auto px-6">
-          <h2 className="font-display text-3xl text-foreground text-center mb-12 font-semibold">What our customers say</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {reviews.map((r, i) => (
-              <div key={i} className="bg-background-secondary p-8 space-y-4">
-                <div className="flex text-accent">
-                  {[...Array(r.stars)].map((_, j) => <Star key={j} size={14} fill="currentColor" strokeWidth={0} />)}
-                </div>
-                <p className="font-display italic text-foreground leading-relaxed">"{r.quote}"</p>
-                <div className="flex items-center gap-3">
-                  <img src={r.avatar} alt={r.name} className="w-8 h-8 rounded-full" loading="lazy" />
-                  <p className="font-sans text-sm text-muted font-medium">{r.name}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Mobile sticky bar */}
       <div className="md:hidden fixed bottom-0 left-0 right-0 bg-background border-t border-border px-6 py-4 flex items-center justify-between z-40">

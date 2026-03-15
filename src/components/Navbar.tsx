@@ -7,7 +7,7 @@ const NAV_LINKS = [
   { label: 'SHOP', to: '/shop' },
   { label: 'CUSTOMIZE', to: '/customize' },
   { label: 'ABOUT', to: '/about' },
-  { label: 'REVIEWS', to: '/#reviews' },
+  { label: 'CONTACT', to: '/contact' },
 ];
 
 export const Navbar = () => {
