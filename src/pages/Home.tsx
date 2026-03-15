@@ -12,9 +12,9 @@ const features = [
 ];
 
 const products = [
-  { name: "The Daily Flow", price: 24.99, image: "/assets/images/product-daily-flow.jpeg" },
-  { name: "The Goal Getter", price: 29.99, image: "/assets/images/product-goal-getter.jpeg" },
-  { name: "The Year Planner", price: 34.99, image: "/assets/images/product-year-planner.jpeg" },
+  { id: "daily-flow", name: "The Daily Flow", price: 24.99, image: "/assets/images/product-daily-flow.jpeg" },
+  { id: "goal-getter", name: "The Goal Getter", price: 29.99, image: "/assets/images/product-goal-getter.jpeg" },
+  { id: "year-planner", name: "The Year Planner", price: 34.99, image: "/assets/images/product-year-planner.jpeg" },
 ];
 
 const testimonials = [
@@ -128,8 +128,8 @@ export const Home = () => {
                 </div>
                 <h3 className="font-sans font-semibold text-lg text-foreground">{p.name}</h3>
                 <p className="text-muted mt-1">${p.price.toFixed(2)}</p>
-                <Link to="/shop" className="inline-flex items-center gap-2 mt-3 text-sm font-medium text-foreground hover:text-accent transition-colors tracking-wide uppercase">
-                  Add to cart <ArrowRight size={14} />
+                <Link to={`/product/${p.id}`} className="inline-flex items-center gap-2 mt-3 text-sm font-medium text-foreground hover:text-accent transition-colors tracking-wide uppercase">
+                  View Details <ArrowRight size={14} />
                 </Link>
               </div>
             ))}

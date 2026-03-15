@@ -6,12 +6,12 @@ import { ArrowRight } from 'lucide-react';
 const FILTERS = ['All', 'Daily', 'Weekly', 'Annual', 'Productivity', 'Minimal'];
 
 const PRODUCTS = [
-  { name: "The Daily Flow", desc: "Your day, beautifully organized.", price: 24.99, category: "Daily", color: "F0E6D6", image: "/assets/images/product-daily-flow.jpeg" },
-  { name: "The Goal Getter", desc: "Big dreams, broken into steps.", price: 29.99, category: "Productivity", color: "E8D5C0", image: "/assets/images/product-goal-getter.jpeg" },
-  { name: "The Year Planner", desc: "365 days of intentional living.", price: 34.99, category: "Annual", color: "D4C5B0", image: "/assets/images/product-year-planner.jpeg" },
-  { name: "The Weekly Reset", desc: "Plan your week with clarity.", price: 22.99, category: "Weekly", color: "C1C8B4", image: "/assets/images/customize-preview.jpeg" },
-  { name: "The Minimal Focus", desc: "Less noise, more progress.", price: 19.99, category: "Minimal", color: "D4A5A5", image: "/assets/images/about-hero.jpeg" },
-  { name: "The Hustle Planner", desc: "Built for builders and doers.", price: 32.99, category: "Productivity", color: "92A8D1", image: "/assets/images/hero-ipad.jpeg" },
+  { id: "daily-flow", name: "The Daily Flow", desc: "Your day, beautifully organized.", price: 24.99, category: "Daily", color: "F0E6D6", image: "/assets/images/product-daily-flow.jpeg" },
+  { id: "goal-getter", name: "The Goal Getter", desc: "Big dreams, broken into steps.", price: 29.99, category: "Productivity", color: "E8D5C0", image: "/assets/images/product-goal-getter.jpeg" },
+  { id: "year-planner", name: "The Year Planner", desc: "365 days of intentional living.", price: 34.99, category: "Annual", color: "D4C5B0", image: "/assets/images/product-year-planner.jpeg" },
+  { id: "weekly-reset", name: "The Weekly Reset", desc: "Plan your week with clarity.", price: 22.99, category: "Weekly", color: "C1C8B4", image: "/assets/images/customize-preview.jpeg" },
+  { id: "minimal-focus", name: "The Minimal Focus", desc: "Less noise, more progress.", price: 19.99, category: "Minimal", color: "D4A5A5", image: "/assets/images/about-hero.jpeg" },
+  { id: "hustle-planner", name: "The Hustle Planner", desc: "Built for builders and doers.", price: 32.99, category: "Productivity", color: "92A8D1", image: "/assets/images/hero-ipad.jpeg" },
 ];
 
 export const Shop = () => {
@@ -64,12 +64,20 @@ export const Shop = () => {
                 <p className="text-muted text-sm mt-1">{p.desc}</p>
                 <div className="flex items-center justify-between mt-3">
                   <span className="text-foreground font-medium">${p.price.toFixed(2)}</span>
-                  <button
-                    onClick={() => addToCart({ name: p.name, price: p.price, image: p.image })}
-                    className="inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-accent transition-colors tracking-wide uppercase"
-                  >
-                    Add to cart <ArrowRight size={14} />
-                  </button>
+                  <div className="flex gap-3">
+                    <Link
+                      to={`/product/${p.id}`}
+                      className="text-sm font-medium text-muted hover:text-foreground transition-colors"
+                    >
+                      View Details
+                    </Link>
+                    <button
+                      onClick={() => addToCart({ name: p.name, price: p.price, image: p.image })}
+                      className="inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-accent transition-colors tracking-wide uppercase"
+                    >
+                      Add to cart <ArrowRight size={14} />
+                    </button>
+                  </div>
                 </div>
               </div>
             ))}
