@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 33% 99%;
+    --background-secondary: 36 30% 93%;
+    --foreground: 0 0% 17%;
+
+    --card: 40 33% 99%;
+    --card-foreground: 0 0% 17%;
+
+    --popover: 40 33% 99%;
+    --popover-foreground: 0 0% 17%;
+
+    --primary: 0 0% 17%;
+    --primary-foreground: 40 33% 99%;
+
+    --secondary: 36 30% 93%;
+    --secondary-foreground: 0 0% 17%;
+
+    --muted: 30 5% 40%;
+    --muted-foreground: 30 5% 40%;
+
+    --accent: 24 68% 70%;
+    --accent-foreground: 0 0% 17%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 40 33% 99%;
+
+    --border: 33 23% 87%;
+    --input: 33 23% 87%;
+    --ring: 0 0% 17%;
+
+    --radius: 2px;
+
+    --sidebar-background: 40 33% 99%;
+    --sidebar-foreground: 0 0% 17%;
+    --sidebar-primary: 0 0% 17%;
+    --sidebar-primary-foreground: 40 33% 99%;
+    --sidebar-accent: 36 30% 93%;
+    --sidebar-accent-foreground: 0 0% 17%;
+    --sidebar-border: 33 23% 87%;
+    --sidebar-ring: 0 0% 17%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    text-wrap: balance;
+  }
+}
+
+@layer utilities {
+  .section-padding {
+    @apply py-20 md:py-[120px];
+  }
+
+  .nav-link {
+    @apply font-sans text-[13px] md:text-[14px] font-medium tracking-[0.06em] uppercase text-foreground hover:text-accent transition-colors duration-300;
+  }
+
+  .btn-primary {
+    @apply bg-foreground text-background px-10 py-4 text-[13px] font-semibold tracking-[0.08em] uppercase rounded-sm hover:bg-accent hover:text-foreground transition-all duration-300 inline-block text-center;
+  }
+
+  .btn-secondary {
+    @apply bg-transparent border-[1.5px] border-foreground text-foreground px-10 py-4 text-[13px] font-semibold tracking-[0.08em] uppercase rounded-sm hover:bg-foreground hover:text-background transition-all duration-300 inline-block text-center;
+  }
+
+  .section-label {
+    @apply font-sans text-[11px] font-bold tracking-[0.2em] uppercase text-foreground mb-6;
+  }
+}
